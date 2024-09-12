@@ -9,7 +9,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+//this is using @idclass
 //when two primary key is there
 @Entity
 @Table(name="employee_tbl")
