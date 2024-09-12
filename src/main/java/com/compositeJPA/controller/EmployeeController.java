@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.compositeJPA.Entity.Employee;
 import com.compositeJPA.Entity.EmployeeEmbedd;
+import com.compositeJPA.Entity.EmployeeID;
 import com.compositeJPA.repo.EmployeeEmbededRepository;
 import com.compositeJPA.repo.EmployeeRepository;
 
@@ -43,4 +44,8 @@ public List<Employee> getAllEmployee()
 		return employeeEmbedRepo.findAll(
 				);
 	}
+	    public Employee findEmployee(int employeeID, int deptID) {
+	        EmployeeID id = new EmployeeID(employeeID, deptID);
+	        return employeeRepository.findById(id).orElse(null);
+	    }
 }
